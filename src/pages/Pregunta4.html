@@ -128,9 +128,9 @@
               Pregunta 4
             </span>
             <h2
+            id="question4"
               class="title-font text-xl sm:text-2xl text-gray-800 font-medium leading-snug"
             >
-              ¿Qué es un peligro en el contexto de SST?
             </h2>
           </div>
         </div>
@@ -138,14 +138,14 @@
           <label
             class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
           >
-            <input type="radio" name="answer" class="peer sr-only" />
+            <input type="radio" name="answer" class="peer sr-only" value="a"/>
             <div
               class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
             >
               A
             </div>
             <span class="text-sm sm:text-base text-gray-700 font-medium"
-              >Una condición o acto con potencial de causar daño</span
+              >Boca abajo</span
             >
             <div
               class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -168,14 +168,14 @@
           <label
             class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
           >
-            <input type="radio" name="answer" class="peer sr-only" />
+            <input type="radio" name="answer" class="peer sr-only" value="b"/>
             <div
               class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
             >
               B
             </div>
             <span class="text-sm sm:text-base text-gray-700 font-medium"
-              >La probabilidad de que ocurra un accidente</span
+              >Sentado</span
             >
             <div
               class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -198,14 +198,14 @@
           <label
             class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
           >
-            <input type="radio" name="answer" class="peer sr-only" />
+            <input type="radio" name="answer" class="peer sr-only" value="c"/>
             <div
               class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
             >
               C
             </div>
             <span class="text-sm sm:text-base text-gray-700 font-medium"
-              >Un daño ya ocurrido en el lugar de trabajo</span
+              >De lado o boca arriba</span
             >
             <div
               class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -228,14 +228,14 @@
           <label
             class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
           >
-            <input type="radio" name="answer" class="peer sr-only" />
+            <input type="radio" name="answer" class="peer sr-only" value="d"/>
             <div
               class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
             >
               D
             </div>
             <span class="text-sm sm:text-base text-gray-700 font-medium"
-              >Una norma de seguridad establecida</span
+              >Con la cabeza sin almohada</span
             >
             <div
               class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -278,6 +278,7 @@
             <span>Tiempo estimado: 30s</span>
           </div>
           <button
+          id="next"
             class="w-full sm:w-auto px-8 py-3 bg-brand hover:bg-brand-strong text-white font-semibold rounded-xl shadow-lg shadow-brand/30 transform transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-brand-subtle flex items-center justify-center gap-2 group/btn"
           >
             Siguiente
@@ -319,5 +320,8 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../app.js"></script>
+    <script src="../js/page4.js"></script>
   </body>
 </html>

@@ -1,47 +1,40 @@
 const indice = 2;
 
-const a = document.getElementById('answerA');
-const b = document.getElementById('answerA');
-const c = document.getElementById('answerA');
+const btnSiguiente = document.getElementById('next');
 
 const questionTitle = document.getElementById('question3');
-
-a.addEventListener('click', function () {
-
-    const result = responseQuiz(indice, a.value);
-
-    if (result) {
-        window.location.href('../pages/pagina4.html');
-    } else {
-        return;
-    }
-});
-
-b.addEventListener('click', function () {
-
-    const result = responseQuiz(indice, b.value);
-
-    if (result) {
-        window.location.href('../pages/pagina4.html');
-    } else {
-        return;
-    }
-
-});
-
-c.addEventListener('click', function () {
-
-    const result = responseQuiz(indice, c.value);
-
-    if (result) {
-        window.location.href('../pages/pagina4.html');
-    } else {
-        return;
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function () {
 
     questionTitle.innerText = `${questions[indice].question}`
+
+});
+
+btnSiguiente.addEventListener('click', function () {
+
+    const opcionSeleccionada = document.querySelector('input[name="answer"]:checked');
+
+    if (!opcionSeleccionada) {
+
+        Swal.fire({
+            icon: 'info',
+            title: '¡Respuesta vacia!',
+            text: '¡Trata de hacerlo de nuevo!',
+            showConfirmButton: false,
+            timer: 2000
+        });
+
+        return;
+    };
+
+    const respuesta = responseQuiz(indice, opcionSeleccionada.value);
+
+    if (respuesta) {
+
+        setTimeout(() => {window.location.href = '../pages/Pregunta4.html';},2000)
+        
+    } else {
+        return;
+    }
 
 })

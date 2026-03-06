@@ -176,11 +176,9 @@
               Pregunta 1
             </span>
             <h2
-              class="title-font text-xl sm:text-2xl text-gray-800 font-medium leading-snug" id="question1"
-            >
-              ¿Cuál es el objetivo principal del Sistema de Gestión de Seguridad
-              y Salud en el Trabajo (SG-SST)?
-            </h2>
+              class="title-font text-xl sm:text-2xl text-gray-800 font-medium leading-snug"
+              id="question1"
+            ></h2>
           </div>
         </div>
 
@@ -189,9 +187,15 @@
           <div class="space-y-3 sm:space-y-4">
             <!-- Option A -->
             <label
-              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none" id="Answer1"
+              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
+              id="Answer1"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input
+                type="radio"
+                name="answer"
+                class="peer sr-only"
+                value="a"
+              />
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -200,7 +204,7 @@
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
               >
-                Aumentar las ganancias de la empresa rápidamente.
+                Un tipo de ejercicio para fortalecer músculos.
               </span>
               <!-- Custom Checkmark for selected state -->
               <div
@@ -226,7 +230,12 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input
+                type="radio"
+                name="answer"
+                class="peer sr-only"
+                value="b"
+              />
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -235,7 +244,8 @@
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
               >
-                Prevenir lesiones y enfermedades laborales, y promover la salud.
+                Mantener posturas y movimientos correctos en las actividades
+                diarias.
               </span>
               <!-- Custom Checkmark for selected state -->
               <div
@@ -261,7 +271,12 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input
+                type="radio"
+                name="answer"
+                class="peer sr-only"
+                value="c"
+              />
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -270,7 +285,7 @@
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
               >
-                Cumplir un requisito legal sin aplicarlo en la práctica.
+                Una dieta para mejorar la postura.
               </span>
               <!-- Custom Checkmark for selected state -->
               <div
@@ -296,7 +311,12 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input
+                type="radio"
+                name="answer"
+                class="peer sr-only"
+                value="d"
+              />
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -305,7 +325,7 @@
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
               >
-                Contratar más personal para las áreas operativas.
+                Un tratamiento médico para el dolor de espalda
               </span>
               <!-- Custom Checkmark for selected state -->
               <div
@@ -354,6 +374,7 @@
 
           <button
             class="w-full sm:w-auto px-8 py-3 bg-brand hover:bg-brand-strong text-white font-semibold rounded-xl shadow-lg shadow-brand/30 transform transition-all hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-brand-subtle flex items-center justify-center gap-2 group/btn"
+            id="next"
           >
             Siguiente
             <svg
@@ -402,5 +423,8 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../app.js"></script>
+    <script src="../js/page1.js"></script>
   </body>
 </html>

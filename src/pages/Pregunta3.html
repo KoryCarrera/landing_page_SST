@@ -135,10 +135,9 @@
               Pregunta 3
             </span>
             <h2
+            id="question3"
               class="title-font text-xl sm:text-2xl text-gray-800 font-medium leading-snug"
             >
-              ¿Cuál es el primer paso en la investigación de un accidente de
-              trabajo?
             </h2>
           </div>
         </div>
@@ -147,7 +146,7 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input type="radio" name="answer" class="peer sr-only" value="a"/>
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -155,7 +154,7 @@
               </div>
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
-                >Sancionar a los responsables</span
+                >Doblando la espalda</span
               >
               <div
                 class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -178,7 +177,7 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input type="radio" name="answer" class="peer sr-only" value="b"/>
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -186,7 +185,7 @@
               </div>
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
-                >Asegurar la escena y brindar atención a los lesionados</span
+                >Girando el tronco rápidamente</span
               >
               <div
                 class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -209,7 +208,7 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input type="radio" name="answer" class="peer sr-only" value="c"/>
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -217,7 +216,7 @@
               </div>
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
-                >Redactar un informe final</span
+                >Flexionando las rodillas y manteniendo el objeto cerca del cuerpo</span
               >
               <div
                 class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -240,7 +239,7 @@
             <label
               class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
             >
-              <input type="radio" name="answer" class="peer sr-only" />
+              <input type="radio" name="answer" class="peer sr-only" value="d"/>
               <div
                 class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
               >
@@ -248,7 +247,7 @@
               </div>
               <span
                 class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
-                >Notificar a los medios de comunicación</span
+                >Levantándolo con una sola mano</span
               >
               <div
                 class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
@@ -292,6 +291,7 @@
             <span>Tiempo estimado: 30s</span>
           </div>
           <button
+          id="next"
             class="w-full sm:w-auto px-8 py-3 bg-brand hover:bg-brand-strong text-white font-semibold rounded-xl shadow-lg shadow-brand/30 transform transition-all hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-brand-subtle flex items-center justify-center gap-2 group/btn"
           >
             Siguiente
@@ -338,5 +338,8 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../app.js"></script>
+    <script src="../js/page3.js"></script>
   </body>
 </html>
