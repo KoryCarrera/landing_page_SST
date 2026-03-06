@@ -18,6 +18,8 @@ btn.addEventListener('click', function () {
 
         setTimeout(() => { window.location.href = '../../index.html' }, 2000);
 
+        correctAnswer = true
+
     } else {
         return;
     }
