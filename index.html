@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Challenge SST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#22c55e",
+              "brand-strong": "#16a34a",
+              "brand-softer": "#f0fdf4",
+              "brand-subtle": "#dcfce7",
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Lora", "ui-serif", "Georgia", "serif"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4,0,0.6,1) infinite",
+            },
+            keyframes: {
+              float: {
+                "0%,100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-14px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .title-font {
+        font-family: "Lora", serif;
+      }
+
+      /* Animated gradient border on CTA button */
+      .btn-glow {
+        position: relative;
+      }
+      .btn-glow::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 1rem;
+        background: linear-gradient(120deg, #4ade80, #16a34a, #34d399, #16a34a);
+        background-size: 300% 300%;
+        animation: gradientShift 3s ease infinite;
+        z-index: -1;
+        filter: blur(4px);
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+      .btn-glow:hover::before {
+        opacity: 1;
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Badge shimmer */
+      .badge-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .badge-shine::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.5),
+          transparent
+        );
+        animation: shine 2.5s ease infinite;
+      }
+      @keyframes shine {
+        to {
+          left: 150%;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-brand-softer overflow-x-hidden">
+    <!-- ── Ambient glows ── -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <div
+        class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-green-300/25 blur-3xl animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-emerald-300/20 blur-3xl animate-pulse-slow"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-100/40 blur-3xl"
+      ></div>
+    </div>
+
+    <!-- ── Dot pattern overlay ── -->
+    <div
+      class="fixed inset-0 pointer-events-none z-0"
+      style="
+        background-image: radial-gradient(#86efac 1px, transparent 1px);
+        background-size: 32px 32px;
+        opacity: 0.35;
+      "
+    ></div>
+
+    <!-- ── Main content ── -->
+    <main
+      class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-24 text-center"
+    >
+      <!-- Floating badge -->
+      <div
+        class="badge-shine inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-brand/30 text-brand-strong text-xs sm:text-sm font-bold tracking-widest uppercase shadow-md mb-8"
+      >
+        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+        Seguridad y Salud en el Trabajo
+      </div>
+
+      <!-- Hero title -->
+      <h1
+        class="title-font text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-900 leading-tight mb-6 max-w-3xl"
+      >
+        Trivia
+        <em class="text-brand not-italic block sm:inline"> Challenge</em>
+      </h1>
+
+      <!-- Subtitle -->
+      <p
+        class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10"
+      >
+        Pon a prueba tus conocimientos sobre
+        <strong class="text-brand-strong font-semibold">SST</strong>.<br
+          class="hidden sm:block"
+        />
+        8 preguntas · Sin límite de tiempo · 100% gratis
+      </p>
+
+      <!-- Stats row -->
+      <div
+        class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-12 text-sm text-gray-500"
+      >
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl font-bold text-brand-strong title-font">8</span>
+          <span>Preguntas</span>
+        </div>
+        <div class="w-px bg-gray-200 self-stretch hidden sm:block"></div>
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl font-bold text-brand-strong title-font">4</span>
+          <span>Opciones c/u</span>
+        </div>
+        <div class="w-px bg-gray-200 self-stretch hidden sm:block"></div>
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl font-bold text-brand-strong title-font">∞</span>
+          <span>Intentos</span>
+        </div>
+      </div>
+
+      <!-- CTA button -->
+      <div class="btn-glow rounded-2xl">
+        <a
+          href="src/pages/Pregunta1.html"
+          class="relative inline-flex items-center gap-3 px-10 py-4 bg-brand hover:bg-brand-strong text-white font-semibold text-base sm:text-lg rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-brand/40 group"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+          Comenzar el desafío
+          <svg
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Floating illustration -->
+      <div class="mt-16 animate-float">
+        <div class="relative w-64 h-40 sm:w-80 sm:h-48 mx-auto">
+          <!-- Card mockup -->
+          <div
+            class="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-3xl border border-brand-subtle shadow-2xl flex flex-col justify-between p-5 sm:p-6"
+          >
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full bg-brand"></div>
+              <div class="h-2.5 w-20 bg-brand-subtle rounded-full"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="h-3 bg-gray-100 rounded-full w-full"></div>
+              <div class="h-3 bg-gray-100 rounded-full w-4/5"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div
+                class="h-8 bg-brand-softer border border-brand-subtle rounded-xl"
+              ></div>
+              <div
+                class="h-8 bg-brand-softer border border-brand-subtle rounded-xl"
+              ></div>
+              <div
+                class="h-8 bg-brand/10 border border-brand/30 rounded-xl"
+              ></div>
+              <div
+                class="h-8 bg-brand-softer border border-brand-subtle rounded-xl"
+              ></div>
+            </div>
+          </div>
+          <!-- Glow behind card -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-green-300/40 to-emerald-400/30 rounded-3xl blur-xl scale-105"
+          ></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="relative z-10 text-center pb-8 text-xs text-gray-400">
+      Trivia Challenge &mdash; SST &copy; 2026
+    </footer>
+  </body>
+</html>

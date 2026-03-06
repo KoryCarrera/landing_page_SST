@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pregunta 2 - Trivia Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#22c55e",
+              "brand-strong": "#16a34a",
+              "brand-softer": "#f0fdf4",
+              "brand-subtle": "#dcfce7",
+              heading: "#111827",
+            },
+            borderRadius: { base: "1rem" },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Lora", "ui-serif", "Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+        background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      .title-font {
+        font-family: "Lora", serif;
+      }
+      .shimmer-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-card::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -100%;
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(
+          105deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.7) 50%,
+          transparent 80%
+        );
+        transform: skewX(-20deg);
+        transition: left 0.7s ease;
+        pointer-events: none;
+      }
+      .group:hover .shimmer-card::after {
+        left: 150%;
+      }
+      .option-btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .option-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+      }
+      .option-btn:active {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8"
+  >
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+      <div
+        class="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-green-200/30 blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-[0] right-[0] w-[60%] h-[60%] rounded-full bg-emerald-200/20 blur-3xl"
+      ></div>
+    </div>
+    <header class="w-full max-w-2xl text-center mb-8 sm:mb-12 relative z-10">
+      <h1
+        class="title-font text-4xl sm:text-5xl lg:text-6xl text-brand-strong font-semibold tracking-tight mb-3 flex justify-center items-center gap-2"
+      >
+        Trivia <em class="text-brand not-italic">Challenge</em>
+      </h1>
+      <div
+        class="h-1 w-24 bg-gradient-to-r from-green-300 via-brand to-emerald-400 mx-auto rounded-full mb-4 opacity-80"
+      ></div>
+      <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
+        Demuestra lo que sabes sobre Seguridad y Salud en el Trabajo.
+      </p>
+    </header>
+    <main class="w-full max-w-xl mx-auto relative group z-10">
+      <div
+        class="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-700"
+      ></div>
+      <div
+        class="shimmer-card relative bg-white/95 backdrop-blur-sm border border-brand-subtle rounded-3xl shadow-xl overflow-hidden"
+      >
+        <div
+          class="relative bg-gradient-to-br from-brand-softer to-brand-subtle px-6 py-8 sm:px-8 border-b border-green-100/50 overflow-hidden"
+        >
+          <div
+            class="absolute -top-10 -right-10 w-32 h-32 bg-brand/10 rounded-full blur-xl"
+          ></div>
+          <div
+            class="absolute -bottom-10 -left-10 w-24 h-24 bg-emerald-400/10 rounded-full blur-lg"
+          ></div>
+          <div class="relative z-10">
+            <span
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-brand/20 text-brand-strong text-xs font-bold tracking-wider uppercase mb-3 shadow-sm"
+            >
+              <svg
+                class="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Pregunta 2
+            </span>
+            <h2
+              class="title-font text-xl sm:text-2xl text-gray-800 font-medium leading-snug"
+            >
+              ¿Qué significa la sigla EPP en el contexto de seguridad laboral?
+            </h2>
+          </div>
+        </div>
+        <div class="p-6 sm:p-8">
+          <div class="space-y-3 sm:space-y-4">
+            <label
+              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
+            >
+              <input type="radio" name="answer" class="peer sr-only" />
+              <div
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
+              >
+                A
+              </div>
+              <span
+                class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
+                >Equipo de Prevención Personal</span
+              >
+              <div
+                class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label
+              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
+            >
+              <input type="radio" name="answer" class="peer sr-only" />
+              <div
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
+              >
+                B
+              </div>
+              <span
+                class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
+                >Equipo de Protección Personal</span
+              >
+              <div
+                class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label
+              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
+            >
+              <input type="radio" name="answer" class="peer sr-only" />
+              <div
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
+              >
+                C
+              </div>
+              <span
+                class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
+                >Elemento de Primeros Auxilios</span
+              >
+              <div
+                class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </label>
+            <label
+              class="option-btn relative flex items-center p-4 border-2 border-slate-100 rounded-2xl cursor-pointer bg-white hover:border-brand hover:bg-brand-softer group/opt select-none"
+            >
+              <input type="radio" name="answer" class="peer sr-only" />
+              <div
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-slate-200 text-slate-400 font-bold mr-4 peer-checked:bg-brand peer-checked:border-brand peer-checked:text-white group-hover/opt:border-brand group-hover/opt:text-brand transition-colors"
+              >
+                D
+              </div>
+              <span
+                class="text-sm sm:text-base text-gray-700 font-medium peer-checked:text-brand-strong"
+                >Equipamiento Profesional Preventivo</span
+              >
+              <div
+                class="absolute right-4 opacity-0 peer-checked:opacity-100 text-brand transition-opacity"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          class="bg-slate-50 border-t border-slate-100 px-6 py-4 sm:px-8 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div
+            class="flex items-center gap-2 text-sm text-gray-500 font-medium bg-white px-3 py-1.5 rounded-full shadow-sm border border-slate-200"
+          >
+            <svg
+              class="w-4 h-4 text-emerald-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>Tiempo estimado: 30s</span>
+          </div>
+          <button
+            class="w-full sm:w-auto px-8 py-3 bg-brand hover:bg-brand-strong text-white font-semibold rounded-xl shadow-lg shadow-brand/30 transform transition-all hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-brand-subtle flex items-center justify-center gap-2 group/btn"
+          >
+            Siguiente
+            <svg
+              class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer class="mt-8 sm:mt-12 flex justify-center gap-2 z-10">
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      <div class="w-8 h-2 bg-brand rounded-full"></div>
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+    </footer>
+    <script>
+      const labels = document.querySelectorAll(".option-btn");
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          labels.forEach((label) => {
+            if (!label.querySelector("input").checked) {
+              label.classList.add("opacity-75");
+              label.classList.remove("shadow-sm");
+            } else {
+              label.classList.remove("opacity-75");
+              label.classList.add("shadow-sm");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

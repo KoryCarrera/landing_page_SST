@@ -1,0 +1,15 @@
+ .shimmer { overflow: hidden; }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -75%;
+    width: 50%; height: 200%;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+  }
+  .group:hover .shimmer::after { left: 125%; }
+  
+  .main{
+    background-color: black;
+  }
