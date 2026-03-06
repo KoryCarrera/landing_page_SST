@@ -1,4 +1,4 @@
-const correctAnswer = [false, false, false, false, false, false, false, false];
+let puntajeActual = parseInt(localStorage.getItem('puntaje')) || 0;
 
 const questions = [
     {
@@ -27,11 +27,11 @@ const questions = [
     },
     {
         question: 'Escribe una palabra: ¿Qué parte del cuerpo se flexiona al levantar correctamente un objeto pesado?',
-        answer: 'rodilla'
+        answer: 'rodillas'
     },
     {
-        question: 'Escribe una palabra: ¿Qué estructura del cuerpo se protege principalmente al mantener una buena higiene postural?',
-        answer: 'columna'
+        question: 'Escribe una palabra: Una postura equilibrada ayuda a mejorar la función respiratoria y la...',
+        answer: 'circulacion'
     },
 ];
 
@@ -75,7 +75,8 @@ function responseQuiz(indice, response) {
             timer: 2000,
         });
 
-        correctAnswer[indice] = true;
+        puntajeActual++;
+        localStorage.setItem('puntaje', puntajeActual);
 
         return true;
     } else {
