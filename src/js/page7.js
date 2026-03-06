@@ -3,12 +3,21 @@ const indice = 6;
 const response = document.getElementById('answer');
 const btn = document.getElementById('next');
 
-btn.addEventListener('click', function(){
+const titleQuestion = document.getElementById('question7');
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    titleQuestion.innerText = `${questions[indice].question}`
+});
+
+btn.addEventListener('click', function () {
 
     const result = responseQuiz(indice, response.value);
 
-    if (result){
-        window.location.href = '../pages/pagina6.html'
+    if (result) {
+
+        setTimeout(() => { window.location.href = '../pages/Pregunta8.html' }, 2000);
+
     } else {
         return;
     }
