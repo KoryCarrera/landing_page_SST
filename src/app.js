@@ -30,7 +30,7 @@ function responseQuiz(indice, response){
             showConfirmButton: false,
             timer: 2000,
         });
-
+        return false;
     };
 
     if (typeof response !== 'string') {
@@ -42,7 +42,7 @@ function responseQuiz(indice, response){
             showConfirmButton: false,
             timer: 2000,
         });
-
+        return false;
     };
 
     const correct = questions[indice].answer;
@@ -60,6 +60,8 @@ function responseQuiz(indice, response){
         });
         
         correctAnswer[indice] = true;
+
+        return true;
     } else {
 
         Swal.fire({
@@ -70,5 +72,6 @@ function responseQuiz(indice, response){
             timer: 2000,
         });
 
+        return false;
     };
 };

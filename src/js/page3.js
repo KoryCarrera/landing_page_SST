@@ -4,24 +4,43 @@ const a = document.getElementById('answerA');
 const b = document.getElementById('answerA');
 const c = document.getElementById('answerA');
 
-const questionTitle = document.getElementById('question');
+const questionTitle = document.getElementById('question3');
 
-a.addEventListener('click', function(){
+a.addEventListener('click', function () {
 
-    responseQuiz(indice, a.value);
+    const result = responseQuiz(indice, a.value);
+
+    if (result) {
+        window.location.href('../pages/pagina4.html');
+    } else {
+        return;
+    }
 });
 
-b.addEventListener('click', function(){
+b.addEventListener('click', function () {
 
-    responseQuiz(indice, b.value);
+    const result = responseQuiz(indice, b.value);
+
+    if (result) {
+        window.location.href('../pages/pagina4.html');
+    } else {
+        return;
+    }
+
 });
 
-c.addEventListener('click', function(){
+c.addEventListener('click', function () {
 
-    responseQuiz(indice, c.value);
+    const result = responseQuiz(indice, c.value);
+
+    if (result) {
+        window.location.href('../pages/pagina4.html');
+    } else {
+        return;
+    }
 });
 
-document.addEventListener('DOMContentLoaded', function (){
+document.addEventListener('DOMContentLoaded', function () {
 
     questionTitle.innerText = `${questions[indice].question}`
 
